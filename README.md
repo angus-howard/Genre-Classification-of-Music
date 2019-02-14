@@ -19,7 +19,7 @@ A closer look at the song lyrics revealed that there was very little difference 
 
 An exploration of the Free Music Archive dataset, with modeling on the extracted audio features.
 
-### [Analysis of Song Lyrics - Kaggle Dataset](./lyrics_analysis.ipynb)
+### [Analysis of Song Lyrics - Kaggle Dataset](./lyric_analysis.ipynb)
 
 Genre tags are added to the dataset of song lyrics using Deezer API. A selection of NLP techniques are then used on the lyrics in an attempt to produce a working model.
 
