@@ -1,4 +1,4 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone Project: Analysis of Song Lyrics for Genre Classification
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone Project: Analysis of Song Lyrics and Audio Features for Genre Classification
 
 ## Initial Aims
 
@@ -37,7 +37,7 @@ Genre tags are added to the dataset of song lyrics using Deezer API. A selection
 
 ### [Web Scraping](./web_scraping.ipynb)
 
-This notebook contains the functions used for web scraping, originally the hope was to obtain lyrics for the Free Music Archive data set but as it turned out, lyrics could only be found for 2000 of the 160000 tracks. Attempts to fetch lyrics were made to a number of different platforms using API requests, requests/Beautiful Soup and Selenium.
+This notebook contains the functions used for web scraping, originally the hope was to obtain lyrics for the Free Music Archive data set but as it turned out, lyrics could only be found for 2,000 of the 160,000 tracks. Attempts to fetch lyrics were made to a number of different platforms using API requests, requests/Beautiful Soup and Selenium.
 
 ## Next Steps
 
