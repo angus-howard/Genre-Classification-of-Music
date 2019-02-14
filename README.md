@@ -1,48 +1,25 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Data Science: Capstone Project
-
-The Capstone Project is divided into 5 deliverables, each building on top of skills learned previously to scaffold students' learning over the entire course. Project deliverables include objectives, requirements, rubrics, and suggested resources - all of which tie into the overall competencies for this course.
+## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone Project: Analysis of Song Lyrics for Genre Classification
 
 
+### Project Description
+The validity of song genre categorisation is constantly up for debate, not least because the way in which a genre is classified is, inherently, subjective, with different people often holding conflicting opinions as to which genre a certain band, album or track should fall within. Furthermore, the large catalogue of sub-genres that exist within each category only serve to blur the lines even further. The aim of this project was to investigate whether Machine Learning algorithms can make any sense of these subjective tags and provide a model for classifying a songs genre. How much of a song’s classifying character is contained within the structure of its sound and how much is down to the content of its lyrics?
 
-### **[Capstone, Part 1: Pitch + Problem Statement](./part-01/readme.md)**
+The project looked into two datasets: [The Free Music Archive](http://freemusicarchive.org/) (FMA) dataset and a Kaggle dataset of song lyrics entitled: [Every song you have heard(almost)!](https://www.kaggle.com/artimous/every-song-you-have-heard-almost/home). Intuitively, Genre seems to be a product of the melodic features of a song; the shape, structure and mood of a track are integral in categorising it as one thing or another. The distinction in song lyrics on the other hand is maybe less clear. Although selecting a Hip-Hop lyric from a group of Country lyrics would often be relatively easy, trying to distinguish Rock from Folk could prove far more challenging. It was these potentially subtle differences in the lyrics, which could go unnoticed simply by inspection, that were the main focus of this project. The hope was that they could be identified and amplified using Machine Learning.
 
-Pitch us on potential ideas for a data-driven project. Think of topics you’re passionate about, knowledge you’re familiar with, or problems relevant to industries you’d like to work with. What questions do you want to answer?
-- **Requirements:** Lightning talk with 2-3 topics, including a problem statement, potential audience, goals, and success metrics, as well as possible data sources for each. Remember, if you can’t find data, you can’t do your project.
-- **Format:** Slide deck
-- **Due:** Week 8, Monday, 3 December
+The metric of success was the overall accuracy of prediction. No one genre is more important than another and so the absolute accuracy of each model is an acceptable method for gauging performance. The success or failure of the song lyrics to predict genre was determined by comparing a model trained solely on lyrics to a model trained solely on audio features. The final step was to train a model using both audio features and lyrics to verify the effectiveness (or not) of the lyrics to improve classification.
 
+The findings were disappointing, despite extensive cleaning and feature engineering on the lyrics from the large Kaggle dataset, no model performed better than the baseline accuracy. Most attempts to train a model resulted in a model that would default to predicting the majority class for all observations. Randomly under sampling to produce a training set with balanced classes led to a model that at least made predictions, however the accuracy of these models on the hold out test set were very low, with a high training score suggesting severe overfitting. Sentiment analysis of the lyrics produced similar results, no model produced an accuracy greater than the baseline.
 
-### **[Capstone, Part 2: Dataset + Data Collection](./part-02/readme.md)**
+The audio features, as expected, performed far better as predictors of genre. A number of models were tested, with two (a Support Vector Machine and a Multilayer Perceptron neural network) considerably out performing all others. Once tuned the Support Vector Machine produced accuracy scores on the test set that were 100% better than the baseline.
 
-Use your newfound skills to source and collect the relevant data for your project. Data acquisition, transformation, and cleaning are typically the most time-consuming parts of data science projects, so don’t procrastinate!
+A closer look at the song lyrics revealed that there was very little difference in their content for each genre. Even with extensive stop word removal, the most frequently occurring words in each genre category were almost entirely the same. It seems that there is too much noise in the data for the model to predict effectively, going forward a closer look will have to be taken at some of the examples that were predicted correctly and some of those that were misclassified to try and determine what information in the lyrics, if any, is distinct for each genre.
 
-- **Requirements**: Source and format the data for your project. Perform preliminary data munging and cleaning of the data relevant to your project goals.  Describe your data keeping the intended audience of your final report in mind.
-- **Format:** Table, file, or database with relevant description in a Jupyter Notebook.
-- **Due:** Week 9, Tuesday, 11 December
+### Project Notebooks
+#### **[Analysis of Audio Features - Free Music Archive Dataset](Audio Feature Analysis.ipynb)**
+An exploration of the Free Music Archive dataset, with modeling on the extracted audio features.
 
+#### **[Analysis of Audio Features - Free Music Archive Dataset](Lyrics Analysis.ipynb)**
+Genre tags are added to the dataset of song lyrics using Deezer API. A selection of NLP techniques are then used on the lyrics in an attempt to produce a working model.
 
-### **[Capstone, Part 3: EDA + Preliminary Analysis](./part-03/readme.md)**
-
-Begin quantitatively describing and visualizing your data. With rich datasets, EDA can go down an endless number of roads. Maintain perspective on your goals and scope your EDA accordingly. Managing your own time is a critical skill in analysis projects.  Keep notes on your approach, results, setbacks, and findings.
-
-- **Requirements**: Perform initial descriptive and visual analysis of your data. Identify outliers, summarize risks and limitations, and describe how your EDA will inform your modeling decisions.
-- **Format:** Jupyter Notebook
-- **Due:** End of week 10, 11 January
-
-
-### **[Capstone, Part 4: Findings + Technical Report](./part-04/readme.md)**
-
-Share your technical findings with your fellow data scientists. Explain your goals, describe modeling choices, evaluate model performance, and discuss results. Data science reporting is technical, but don’t forget that you should tell a compelling story about your data.
-
-- **Requirements**: Summarize your goals and metrics for success, variables of interest, and removal of any outliers or data imputation. Your process description should be concise and relevant to your goals. Summarize statistical analysis, including model selection,  implementation, evaluation, and inference. Be convincing – justify all important decisions! Clearly label plots and visualizations. Include an Executive Summary.
-- **Format:** Jupyter Notebook
-- **Due:** End of week 11, 18 January
-
-
-### **[Capstone, Part 5: Presentation + Non-Technical Summary](./part-05/readme.md)**
-
-Take your findings and share a presentation that delivers the most important insights from your project to a non-technical audience. Tell us the most interesting story about your data. Break down your process for a novice audience. Make sure to include compelling visuals. Time is short, so be sure to practice and include only the most relevant components of your project.
-
-- **Requirements**: Convey your goals, limits/assumptions, methods and their justification, findings, and conclusions. Define technical terms. Include graphics and visualizations.
-- **Format:** Interactive graphic presentation, website, or slide deck.
-- **Due:** End of week 12, 25 January
+#### **[Analysis of Audio Features - Free Music Archive Dataset](Web Scraping.ipynb)**
+This notebook contains the functions used for web scraping, originally the hope was to obtain lyrics for the Free Music Archive data set but as it turned out, lyrics could only be found for 2000 of the 160000 tracks. Attempts to fetch lyrics were made to a number of different platforms using API requests, requests/Beautiful Soup and Selenium.
