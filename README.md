@@ -19,10 +19,10 @@ A closer look at the song lyrics revealed that there was very little difference 
 
 An exploration of the Free Music Archive dataset, with modeling on the extracted audio features.
 
-### [Analysis of Audio Features - Free Music Archive Dataset](./Lyrics Analysis.ipynb)
+### [Analysis of Audio Features - Free Music Archive Dataset](./lyrics_analysis.ipynb)
 
 Genre tags are added to the dataset of song lyrics using Deezer API. A selection of NLP techniques are then used on the lyrics in an attempt to produce a working model.
 
-### [Analysis of Audio Features - Free Music Archive Dataset](./Web Scraping.ipynb)
+### [Analysis of Audio Features - Free Music Archive Dataset](./web_scraping.ipynb)
 
 This notebook contains the functions used for web scraping, originally the hope was to obtain lyrics for the Free Music Archive data set but as it turned out, lyrics could only be found for 2000 of the 160000 tracks. Attempts to fetch lyrics were made to a number of different platforms using API requests, requests/Beautiful Soup and Selenium.
