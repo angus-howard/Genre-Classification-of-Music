@@ -15,7 +15,7 @@ The audio features, as expected, performed far better as predictors of genre. A 
 A closer look at the song lyrics revealed that there was very little difference in their content for each genre. Even with extensive stop word removal, the most frequently occurring words in each genre category were almost entirely the same. It seems that there is too much noise in the data for the model to predict effectively, going forward a closer look will have to be taken at some of the examples that were predicted correctly and some of those that were misclassified to try and determine what information in the lyrics, if any, is distinct for each genre.
 
 ## Project Notebooks
-### [Analysis of Audio Features - Free Music Archive Dataset](./Audio Feature Analysis.ipynb)
+### [Analysis of Audio Features - Free Music Archive Dataset](./audio_feature_analysis.ipynb)
 
 An exploration of the Free Music Archive dataset, with modeling on the extracted audio features.
 
