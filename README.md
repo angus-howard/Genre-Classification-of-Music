@@ -1,7 +1,27 @@
 # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone Project: Analysis of Song Lyrics for Genre Classification
 
+## Initial Aims
 
-## Project Description
+##### Can song lyrics improve a model for genre classification?
+
+- Add lyrics to the FMA dataset and genre tags to the Kaggle dataset using Genius and Deezer APIs respectively.
+
+
+- Train model using audio features from the FMA dataset.
+
+
+- Perform NLP on song lyrics from the Kaggle dataset and train a model with the resulting features.
+
+
+## Next Steps
+
+- Train a model using the small subset of the FMA dataset for which lyrics could be obtained, using both lyrics and audio features.
+
+
+- (IN DEVELOPMENT) Write a script that extracts audio features from an mp3 file using LibROSA and develop a Flask app for genre classification.
+
+
+## Project Description and Findings
 The validity of song genre categorisation is constantly up for debate, not least because the way in which a genre is classified is, inherently, subjective, with different people often holding conflicting opinions as to which genre a certain band, album or track should fall within. Furthermore, the large catalogue of sub-genres that exist within each category only serve to blur the lines even further. The aim of this project was to investigate whether Machine Learning algorithms can make any sense of these subjective tags and provide a model for classifying a songs genre. How much of a song’s classifying character is contained within the structure of its sound and how much is down to the content of its lyrics?
 
 The project looked into two datasets: [The Free Music Archive](http://freemusicarchive.org/) (FMA) dataset and a Kaggle dataset of song lyrics entitled: [Every song you have heard(almost)!](https://www.kaggle.com/artimous/every-song-you-have-heard-almost/home). Intuitively, Genre seems to be a product of the melodic features of a song; the shape, structure and mood of a track are integral in categorising it as one thing or another. The distinction in song lyrics on the other hand is maybe less clear. Although selecting a Hip-Hop lyric from a group of Country lyrics would often be relatively easy, trying to distinguish Rock from Folk could prove far more challenging. It was these potentially subtle differences in the lyrics, which could go unnoticed simply by inspection, that were the main focus of this project. The hope was that they could be identified and amplified using Machine Learning.
