@@ -7,18 +7,10 @@
 - Add lyrics to the FMA dataset and genre tags to the Kaggle dataset using Genius and Deezer APIs respectively.
 
 
-- Train model using audio features from the FMA dataset.
+- Train a model using audio features from the FMA dataset.
 
 
 - Perform NLP on song lyrics from the Kaggle dataset and train a model with the resulting features.
-
-
-## Next Steps
-
-- Train a model using the small subset of the FMA dataset for which lyrics could be obtained, using both lyrics and audio features.
-
-
-- (IN DEVELOPMENT) Write a script that extracts audio features from an mp3 file using LibROSA and develop a Flask app for genre classification.
 
 
 ## Project Description and Findings
@@ -46,3 +38,10 @@ Genre tags are added to the dataset of song lyrics using Deezer API. A selection
 ### [Web Scraping](./web_scraping.ipynb)
 
 This notebook contains the functions used for web scraping, originally the hope was to obtain lyrics for the Free Music Archive data set but as it turned out, lyrics could only be found for 2000 of the 160000 tracks. Attempts to fetch lyrics were made to a number of different platforms using API requests, requests/Beautiful Soup and Selenium.
+
+## Next Steps
+
+- Train a model using the small subset of the FMA dataset for which lyrics could be obtained, using both lyrics and audio features.
+
+
+- (IN DEVELOPMENT) Write a script that extracts audio features from an mp3 file using LibROSA and develop a Flask app for genre classification.
