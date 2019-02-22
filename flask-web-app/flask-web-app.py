@@ -3,12 +3,9 @@ import os
 import pickle
 import librosa_script as lib
 import numpy as np
-from scipy import stats
-import pandas as pd
 from flask import Flask, render_template, request
 from flask_dropzone import Dropzone
 import plotly
-import plotly.plotly as py
 import plotly.graph_objs as go
 import json
 
@@ -28,7 +25,7 @@ app.config.update(
 
 dropzone = Dropzone(app)
 
-with open('./red_svc_model.pkl', 'rb') as mdl:
+with open('/home/ahoward/mysite/flask-web-app/red_svc_model.pkl', 'rb') as mdl:
     model = pickle.load(mdl)
 
 conversion_dict = {  0:'ELECTRO',
@@ -45,8 +42,8 @@ conversion_dict = {  0:'ELECTRO',
 
 @app.route('/', methods=['POST', 'GET'])
 def upload():
+    global filename
     if request.method == 'POST':
-        global filename
         f = request.files.get('file')
         filename = f.filename
         f.save(os.path.join(app.config['UPLOADED_PATH'], f.filename))
@@ -62,8 +59,9 @@ def completed():
 
 @app.route('/predict', methods=['GET'])
 def predict():
-    features = lib.compute_features('./uploads/{}'.format(filename)).values.reshape(1,-1)
-    os.remove('./uploads/{}'.format(filename))
+    global filename
+    features = lib.compute_features('/home/ahoward/mysite/flask-web-app/uploads/{}'.format(filename)).values.reshape(1,-1)
+    os.remove('/home/ahoward/mysite/flask-web-app/uploads/{}'.format(filename))
     # @after_this_request
     # def remove_file():
     #     try:

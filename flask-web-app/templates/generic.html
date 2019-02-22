@@ -42,9 +42,9 @@
 						<div class="content">
 							<h3>Initial Aims</h3>
 
-							<p>The aim of this project was to determine how useful song lyrics could be for categorising music. I wanted to compare a model trained using song lyrics to a model trained using audio features to see how well the lyrics performed comparitively. I expected the audio features to considerably out perform the lyrics, however I still hoped that the lyrics might contain some useful information.  </p>
+							<p>The aim of this project was to determine how useful song lyrics could be for categorising music. I wanted to compare a model trained using song lyrics to a model trained using audio features to see how well the lyrics performed comparatively. I expected the audio features to perform considerably better, however I still hoped that the lyrics might contain some useful information. Unfortunately, as it turns out, they did not!</p>
 
-							<p>Unfortunately they did not, so this web app uses the model trained on the audio features for making predictions. The application first extracts the audio features from the uploaded audio file using a Librosa script adapted from <a href="https://github.com/mdeff/fma">this</a> one used by the Free Music Archive team, it then uses these features to produce an overall genre prediction along with the probabilities of the song beloning to each of the 10 categories.</p>
+							<p>This web app uses the model trained on the audio features for making predictions. First, it extracts the audio features from the uploaded file using a Librosa script adapted from <a href="https://github.com/mdeff/fma/blob/master/features.py">this</a> one used by the Free Music Archive team; it then uses these features to produce an overall genre prediction, along with the probabilities of the song belonging to each of the 10 possible categories.</p>
 
 							<p>To see my full project repo on Github, please follow the link in the 'Contact Me' section at the bottom of this page.</p>
 
