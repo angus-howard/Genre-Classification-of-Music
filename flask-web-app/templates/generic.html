@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<!--
+	Road Trip by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>About The Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="static/css/main.css" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="/">Song Classifier <span>by ANGUS HOWARD</span></a></div>
+				<a href="#menu"><span>Menu</span></a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About The Project</a></li>
+				</ul>
+			</nav>
+
+		<!-- Content -->
+		<!--
+			Note: To show a background image, set the "data-bg" attribute below
+			to the full filename of your image. This is used in each section to set
+			the background image.
+		-->
+			<section id="post" class="wrapper bg-img" data-bg="about.jpg">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>A Little Bit About The Project</h2>
+						</header>
+						<div class="content">
+							<h3>Initial Aims</h3>
+
+							<p>The aim of this project was to determine how useful song lyrics could be for categorising music. I wanted to compare a model trained using song lyrics to a model trained using audio features to see how well the lyrics performed comparitively. I expected the audio features to considerably out perform the lyrics, however I still hoped that the lyrics might contain some useful information.  </p>
+
+							<p>Unfortunately they did not, so this web app uses the model trained on the audio features for making predictions. The application first extracts the audio features from the uploaded audio file using a Librosa script adapted from <a href="https://github.com/mdeff/fma">this</a> one used by the Free Music Archive team, it then uses these features to produce an overall genre prediction along with the probabilities of the song beloning to each of the 10 categories.</p>
+
+							<p>To see my full project repo on Github, please follow the link in the 'Contact Me' section at the bottom of this page.</p>
+
+							<h3>Project Description and Findings</h3>
+
+							<p>The validity of song genre categorisation is constantly up for debate, not least because genre classifications are, inherently, subjective, with different people often holding conflicting opinions as to which genre a certain band, album or track should fall within. Furthermore, the large catalogue of sub-genres that exist within each category only serve to blur the lines even further. The aim of this project was to investigate whether Machine Learning algorithms can make any sense of these subjective tags and provide a model for classifying a songs genre. How much of a song’s classifying character is contained within the structure of its sound and how much is down to the content of its lyrics?</p>
+
+							<p>The project looked into two datasets: <a href="http://freemusicarchive.org/">The Free Music Archive (FMA)</a> dataset and a Kaggle dataset of song lyrics entitled: <a href="https://www.kaggle.com/artimous/every-song-you-have-heard-almost">Every song you have heard(almost)!</a>. Intuitively, Genre seems to be a product of the melodic features of a song; the shape, structure and mood of a track are integral in categorising it as one thing or another. The distinction in song lyrics on the other hand is maybe less clear. Although selecting a Hip-Hop lyric from a group of Country lyrics would often be relatively easy, trying to distinguish Rock from Folk could prove far more challenging. It was these more subtle differences in the lyrics, which could potentially go unnoticed simply by inspection, that were the main focus of this project. The hope was that they could be identified and amplified using Machine Learning.</p>
+
+							<p>The metric of success was the overall accuracy of prediction. No one genre is more important than another and so the absolute accuracy of each model is an acceptable method for gauging performance. The degree to which song lyrics are useful when it comes to predicting genre was determined by comparing a model trained solely using lyrics to a model trained solely using audio features. The final step was to train a model using both audio features and lyrics to verify the effectiveness (or not) of the lyrics to improve classification.</p>
+
+							<p>The findings were disappointing, despite extensive wrangling and feature engineering on the lyrics from the large Kaggle dataset, no model performed better than the baseline accuracy. Most attempts to train a model resulted in a model that would default to predicting the majority class for all observations. Randomly under sampling the training set to produce balanced classes lead to models that did, at least, make predictions, however the accuracy scores of these models on the hold out test set were very low, with a high training score suggesting severe overfitting. Sentiment analysis of the lyrics produced similar results, no model produced an accuracy greater than the baseline.</p>
+
+							<p>The audio features, as expected, performed far better as predictors of genre. A number of models were tested, with two (a Support Vector Machine and a Multilayer Perceptron neural network) considerably out performing all others. Once tuned the Support Vector Machine produced accuracy scores on the test set that were 100% better than the baseline. It is this Support Vector Machine that the web application uses to make predictions.</p>
+
+							<p>A closer look at the song lyrics revealed that there was very little difference in their content for each genre. Even with extensive stop word removal, the most frequently occurring words in each genre category were almost entirely the same. It seems that there is too much noise in the data for the model to predict effectively, going forward a closer look will have to be taken at some of the examples that were predicted correctly and some of those that were misclassified to try and determine what information in the lyrics, if any, is distinct for each genre.</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+
+					<h2>Contact Me</h2>
+						<div class="icons">
+							<a href="mailto:angus@colonsayholidays.co.uk?subject=Genre%20Classification%20Project" class="button alt">Send Me An Email</a>
+						</div>
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/angus-howard/" class="icon round fa-linkedin"><span class="label">Linkedin</span></a></li>
+						<li><a href="https://github.com/angus-howard/Genre-Classification-of-Music/" class="icon round fa-github"><span class="label">Github</span></a></li>
+						<li><a href="https://www.instagram.com/angus_howard/" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+
+
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/jquery.scrolly.min.js"></script>
+			<script src="static/js/jquery.scrollex.min.js"></script>
+			<script src="static/js/skel.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src="static/js/main.js"></script>
+
+	</body>
+</html>

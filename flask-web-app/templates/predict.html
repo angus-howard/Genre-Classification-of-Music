@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<!--
+	Road Trip by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>Upload Completed</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="static/css/main.css" />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+	</head>
+	<body>
+
+    <!-- Header -->
+      <header id="header">
+        <div class="logo"><a href="/">Song Classifier <span>by ANGUS HOWARD</span></a></div>
+        <a href="#menu"><span>Menu</span></a>
+      </header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/about">About The Project</a></li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="post" class="wrapper bg-img" data-bg="Picture1.png">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>SUGGESTED GENRE</h2>
+						</header>
+						<div class="content">
+              <ul class="actions">
+                <a class="button special big">{{pred}}</a>
+              </ul>
+              <article class="box">
+                <header>
+                  <h3>PROBABILITY BY GENRE</h3>
+                </header>
+                <div class="chart" id="bargraph">
+                  <script>
+                      var graphs = {{plot | safe}};
+                      Plotly.plot('bargraph',graphs,{});
+                  </script>
+                </div>
+              </article>
+						</div>
+					</article>
+				</div>
+
+			</section>
+
+
+
+		<!-- Scripts -->
+			<script src="static/js/jquery.min.js"></script>
+			<script src="static/js/jquery.scrolly.min.js"></script>
+			<script src="static/js/jquery.scrollex.min.js"></script>
+			<script src="static/js/skel.min.js"></script>
+			<script src="static/js/util.js"></script>
+			<script src= "{{url_for('static',filename='js/main.js')}}"></script>
+
+	</body>
+</html>
