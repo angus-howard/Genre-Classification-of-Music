@@ -47,11 +47,11 @@ The application categorises songs using the model trained on the audio features.
 
 Correctly Classified             |  Misclassified
 :-------------------------:|:-------------------------:
-<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/1.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/1.png">
-<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/2.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/2.png">
-<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/3.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/3.png">
-<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/4.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/4.png">
-<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/5.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/5.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/1.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/Misclassified/1.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/2.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/Misclassified/2.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/3.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/Misclassified/3.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/4.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/Misclassified/4.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/5.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/Misclassified/5.png">
 
 
 
