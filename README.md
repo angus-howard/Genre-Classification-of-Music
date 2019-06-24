@@ -43,9 +43,22 @@ This notebook contains the functions used for web scraping, originally the hope 
 
 The application categorises songs using the model trained on the audio features. First, it extracts the audio features from the uploaded audio file using a Librosa script adapted from the one used by the Free Music Archive team; it then uses these features to produce an overall genre prediction, along with the probabilities of the song belonging to each of the 10 categories.
 
+##### Flask App Example Classifications
+
+Correctly Classified             |  Misclassified
+:-------------------------:|:-------------------------:
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/1.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/1.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/2.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/2.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/3.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/3.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/4.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/4.png">
+<img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/correctly-classified/5.png">  |  <img align="left" hspace="20" width="360" height="200" src="./flask-web-app/screenshots/misclassified/5.png">
+
+
+
+
+
 ## Next Steps
 
 - Train a model using the small subset of the FMA dataset for which lyrics could be obtained, using both lyrics and audio features.
 
-
-- (IN DEVELOPMENT) Write a script that extracts audio features from an mp3 file using LibROSA and develop a Flask app for genre classification.
+- Use clustering methods on song lyrics
